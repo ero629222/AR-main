@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="hbxIngreso" prefHeight="450.0" prefWidth="700.0"
+      style="-fx-background-image: red;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.mediodiaen.sar.IngresoController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="423.0" prefWidth="421.0" style="-fx-background-color: red;" HBox.hgrow="ALWAYS">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@arcoreal.png" />
+               </image>
+            </ImageView>
+            <HBox alignment="CENTER" prefHeight="79.0" prefWidth="457.0">
+               <children>
+                  <Label text="Sistema de gestión">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow>
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="66.0" prefWidth="472.0">
+               <children>
+                  <Label text="Santo Arco Real de Jerusalen">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow>
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="457.0">
+               <children>
+                  <Label text="De La Republica Argentina">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow>
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="47.0" prefWidth="457.0" style="-fx-opacity: 0.7;">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#btnSalirClick" prefWidth="100.0" text="%login.btn.salir" />
+                  <Pane prefHeight="47.0" prefWidth="120.0" />
+                  <ImageView fitHeight="48.0" fitWidth="46.0" onMouseClicked="#castellano" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@argentina_flags_flag_16969.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="48.0" fitWidth="46.0" onMouseClicked="#ingles" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@united_kingdom_flags_flag_17079.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="48.0" fitWidth="46.0" onMouseClicked="#frances" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@france_flags_flag_16999.png" />
+                     </image>
+                  </ImageView>
+                  <Pane prefHeight="47.0" prefWidth="120.0" />
+                  <Button fx:id="btnIngresar" mnemonicParsing="false" onAction="#btnIngresarClick" prefWidth="100.0" text="%login.btn.ingresar" />
+               </children>
+               <opaqueInsets>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </opaqueInsets>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</HBox>

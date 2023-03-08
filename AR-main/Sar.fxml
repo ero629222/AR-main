@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mediodiaen.sar.SarController">
+   <top>
+      <HBox prefHeight="67.0" prefWidth="1215.0" styleClass="fndo_1" stylesheets="@estilo1.css" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="71.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@arcoreal.png" />
+               </image>
+            </ImageView>
+            <GridPane prefHeight="67.0" prefWidth="832.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="29.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="txtSistema" prefHeight="60.0" prefWidth="817.0" style="-fx-font-size: 40; -fx-font-style: italic;" text="Label" GridPane.rowIndex="1">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="Manjari Bold" size="33.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="997.0" styleClass="fndo_1" stylesheets="@estilo1.css" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label fx:id="txtPie" text="Label" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="39.0" prefWidth="209.0" />
+            <HBox alignment="CENTER" prefHeight="39.0" prefWidth="104.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#btnSalir" text="%btn.salir" />
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </bottom>
+    <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFF0F5;" stylesheets="@estilo1.css" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="tbCapitulos" text="Gran Escriba Edras">
+            <content>
+<!--              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />-->
+                <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EC7063;" BorderPane.alignment="CENTER">
+                    <children>
+                        <VBox layoutX="164.0" layoutY="134.0" prefHeight="564.0" prefWidth="1057.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <AnchorPane prefHeight="15.0" prefWidth="1057.0">
+                                    <children>
+                                        <HBox prefHeight="43.0" prefWidth="1057.0" spacing="6.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Label fx:id="lyndaOcurrencia" prefWidth="600.0" styleClass="button_2" text="...">
+                                                    <font>
+                                                        <Font name="Khmer OS System" size="13.0" />
+                                                    </font>
+                                                </Label>
+                                                <Button fx:id="btnFltr" mnemonicParsing="false" onAction="#btnBscXfltrFnc" styleClass="button_2" text="Buscar" />
+                                                <Button fx:id="btnNvo" mnemonicParsing="false" onAction="#btnNvoFnc" prefWidth="85.0" styleClass="button_2" text="Cancelar" />
+                                                <Pane prefHeight="26.0" prefWidth="55.0" styleClass="button_2" />
+                                                <Pane prefHeight="26.0" prefWidth="18.0" styleClass="button_2" />
+                                            </children>
+                                            <padding>
+                                                <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                            </padding>
+                                        </HBox>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="295.0" prefWidth="1057.0">
+                                    <children>
+                                        <Label layoutX="28.0" layoutY="37.0" text="apellido" />
+                                        <TextField fx:id="txtFldcmpapellido" layoutX="28.0" layoutY="62.0" prefHeight="33.0" prefWidth="437.0" />
+                                        <Label layoutX="481.0" layoutY="37.0" text="nombres" />
+                                        <TextField fx:id="txtFldcmpnombres" layoutX="481.0" layoutY="62.0" prefHeight="33.0" prefWidth="398.0" />
+                                        <Label layoutX="31.0" layoutY="110.0" text="Capítulo" />
+                                        <ComboBox fx:id="cmbxcmpcapituloId" layoutX="31.0" layoutY="139.0" prefHeight="33.0" prefWidth="434.0" />
+                                        <Label layoutX="482.0" layoutY="110.0" text="Cargo" />
+                                        <ComboBox fx:id="cmbxcmpjoyaMovilId" layoutX="482.0" layoutY="139.0" prefHeight="33.0" prefWidth="401.0" />
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="430.0">
+                                    <children>
+                                        <TableView fx:id="tblVwcmp" prefHeight="634.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columns>
+                                                <TableColumn fx:id="clmncmpapellido" prefWidth="384.0" text="apellido" />
+                                                <TableColumn fx:id="clmncmpnombres" minWidth="0.0" prefWidth="340.0" text="nombres" />
+                                                <TableColumn fx:id="clmncmpcapitulo" minWidth="0.0" prefWidth="348.0" text="capitulo" />
+                                                <TableColumn fx:id="clmncmpnumeroCapítulo" prefWidth="65.0" text="N°" />
+                                                <TableColumn fx:id="clmncmpjoya" prefWidth="251.0" text="Cargo" />
+
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="tbCompaneros" text="Escriba Edras">
+            <content>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EC7063;" BorderPane.alignment="CENTER">
+                    <children>
+                        <HBox prefHeight="695.0" prefWidth="1215.0" AnchorPane.bottomAnchor="76.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="653.0" prefWidth="862.0">
+                                  <children>
+                                        <HBox prefHeight="43.0" prefWidth="1057.0" spacing="6.0">
+                                            <children>
+                                                <Label fx:id="lyndaOcurrenciaCmpa" prefHeight="21.0" prefWidth="325.0" styleClass="button_2" text="...">
+                                                    <font>
+                                                        <Font name="Khmer OS System" size="13.0" />
+                                                    </font>
+                                                </Label>
+                                                <Button fx:id="btnFltrCmpa" mnemonicParsing="false" onAction="#btnBscXfltrFncCmpa" styleClass="button_2" text="Buscar" />
+                                                <Button fx:id="btnNvoCmpa" mnemonicParsing="false" onAction="#btnNvoFncCmpa" prefWidth="85.0" styleClass="button_2" text="Cancelar" />
+                                                <Button fx:id="btnCnfCmpa" mnemonicParsing="false" onAction="#btnCnfFncCmpa" styleClass="button_2" text="Confirmar" />
+                                                <Pane prefHeight="26.0" prefWidth="55.0" styleClass="button_2" />
+                                                <Pane prefHeight="26.0" prefWidth="18.0" styleClass="button_2" />
+                                            </children>
+                                            <padding>
+                                                <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                            </padding>
+                                        </HBox>
+                                      <AnchorPane id="Content" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="619.0" prefWidth="853.0">
+                                          <children>
+                                              <Label layoutX="14.0" layoutY="8.0" text="apellido" />
+                                              <TextField fx:id="txtFldcmpaapellido" layoutX="14.0" layoutY="28.0" prefHeight="28.0" prefWidth="298.0" />
+                                              <Label layoutX="320.0" layoutY="8.0" text="nombres" />
+                                              <TextField fx:id="txtFldcmpanombres" layoutX="320.0" layoutY="28.0" prefHeight="28.0" prefWidth="295.0" />
+                                              <Label layoutX="18.0" layoutY="64.0" text="tipo documento" />
+                                              <ComboBox fx:id="cmbxcmpatipoDocumento" layoutX="18.0" layoutY="84.0" prefHeight="28.0" prefWidth="203.0" />
+                                              <Label layoutX="232.0" layoutY="64.0" text="diploma" />
+                                              <TextField fx:id="txtFldcmpadiploma" layoutX="232.0" layoutY="84.0" prefHeight="28.0" prefWidth="80.0" />
+      
+                                              <Label layoutX="321.0" layoutY="64.0" text="Fecha Nacimiento" />
+                                              <DatePicker fx:id="dateFldcmpafechaDesde" layoutX="321.0" layoutY="84.0" prefHeight="28.0" prefWidth="295.0" />
+                                              <Label layoutX="17.0" layoutY="120.0" text="Fecha Exaltación" />
+                                              <DatePicker fx:id="dateFldcmpafechaExaltacion" layoutX="17.0" layoutY="140.0" prefHeight="28.0" prefWidth="295.0" />
+      
+                                              <Label layoutX="321.0" layoutY="120.0" text="Legajo en GL" />
+                                              <TextField fx:id="txtFldcmpanroGl" layoutX="321.0" layoutY="140.0" prefHeight="28.0" prefWidth="130.0" />
+                                              <RadioButton fx:id="chkBxFldcmpaactivo" layoutX="468.0" layoutY="142.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="22.0" prefWidth="106.0" text="activo" textAlignment="RIGHT" />
+
+                                              <Label layoutX="14.0" layoutY="186.0" text="telefono" />
+                                              <TextField fx:id="txtFldcmpatelefono" layoutX="14.0" layoutY="206.0" prefHeight="28.0" prefWidth="200.0" />
+                                              <Label layoutX="214.0" layoutY="186.0" text="celular" />
+                                              <TextField fx:id="txtFldcmpacelular" layoutX="214.0" layoutY="206.0" prefHeight="28.0" prefWidth="200.0" />
+                                              <Label layoutX="414.0" layoutY="186.0" text="casilla_correo" />
+                                              <TextField fx:id="txtFldcmpacasillaCorreo" layoutX="414.0" layoutY="206.0" prefHeight="28.0" prefWidth="200.0" />
+                                              <Label layoutX="14.0" layoutY="240.0" text="pais" />
+                                              <TextField fx:id="txtFldcmpapais" layoutX="14.0" layoutY="260.0" prefHeight="28.0" prefWidth="200.0" />
+                                              <Label layoutX="214.0" layoutY="240.0" text="provincia" />
+                                              <TextField fx:id="txtFldcmpaprovincia" layoutX="214.0" layoutY="260.0" prefHeight="28.0" prefWidth="200.0" />
+                                              <Label layoutX="414.0" layoutY="240.0" text="localidad" />
+                                              <TextField fx:id="txtFldcmpalocalidad" layoutX="414.0" layoutY="260.0" prefHeight="28.0" prefWidth="200.0" />
+                                              <Label layoutX="14.0" layoutY="294.0" text="calle" />
+                                              <TextField fx:id="txtFldcmpacalle" layoutX="14.0" layoutY="314.0" prefHeight="28.0" prefWidth="200.0" />
+                                              <Label layoutX="214.0" layoutY="294.0" text="numero" />
+                                              <TextField fx:id="txtFldcmpanumero" layoutX="214.0" layoutY="314.0" prefHeight="28.0" prefWidth="200.0" />
+                                              <Label layoutX="414.0" layoutY="294.0" text="Piso Dpto" />
+                                              <TextField fx:id="txtFldcmpacomplementoDomicilio" layoutX="414.0" layoutY="314.0" prefHeight="28.0" prefWidth="100.0" />
+                                              <Label layoutX="514.0" layoutY="294.0" text="codigo_postal" />
+                                              <TextField fx:id="txtFldcmpacodigoPostal" layoutX="514.0" layoutY="314.0" prefHeight="28.0" prefWidth="100.0" />
+
+
+                                          <Button fx:id="btnGestionCargosCmpa" layoutX="754.0" layoutY="400.0" mnemonicParsing="false" onAction="#btnGestionCargosCmpaClick" prefHeight="52.0" prefWidth="135.0" rotate="90.0" styleClass="button_2" text="Gestion Cargos" />
+                                          <TableView fx:id="tblVwCargos" layoutX="8.0" layoutY="358.0" prefHeight="140.0" prefWidth="787.0">
+                                            <columns>
+                                                <TableColumn fx:id="clmnCargoCapitulo" prefWidth="190.0" text="Capitulo" />
+                                                <TableColumn fx:id="clmnCargoJoya" prefWidth="127.0" text="Cargo" />
+                                                <TableColumn fx:id="clmnCargofechaDesde" prefWidth="184.0" text="Fecha desde" />
+                                                <TableColumn fx:id="clmnCargofechaHasta" prefWidth="184.0" text="Fecha hasta" />
+                                            </columns>
+                                          </TableView>
+                                          <TableView fx:id="tblVwDebitos" layoutX="8.0" layoutY="500.0" prefHeight="140.0" prefWidth="787.0">
+                                            <columns>
+                                              <TableColumn fx:id="clmnDebitoCuota" prefWidth="70.0" text="Cuota" />
+                                              <TableColumn fx:id="clmnDebitoFecha" prefWidth="139.0" text="Fecha" />
+                                                <TableColumn fx:id="clmnDebitoEmitido" prefWidth="173.0" text="Emitido" />
+                                                <TableColumn fx:id="clmnDebitoPago" prefWidth="155.0" text="Pagado" />
+                                                <TableColumn fx:id="clmnDebitoSaldo" prefWidth="185.0" text="Saldo" />
+                                            </columns>
+                                          </TableView>
+                                          <PieChart fx:id="pieChartDeuda" layoutX="620.0" layoutY="12.0" prefHeight="216.0" prefWidth="238.0" />
+                                          <Label fx:id="txtInfoDeuda" layoutX="919.0" layoutY="244.0" />
+                                          <CheckBox fx:id="soloDeuda" layoutX="762.0" layoutY="559.0" mnemonicParsing="false" rotate="90.0" text="Solo deuda" />
+      
+                                          </children>
+                                      </AnchorPane>
+                                  </children>
+                              </VBox>
+                              <TableView fx:id="tblVwcmpa" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="654.0" prefWidth="418.0">
+                                 <columns>
+                                    <TableColumn fx:id="clmncmpaapellido" prefWidth="164.0" text="apellido" />
+                                    <TableColumn fx:id="clmncmpanombres" prefWidth="153.0" text="nombres" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="tbGranCapitulo" text="Gran Tesorero">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #EC7063;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="659.0" prefWidth="1281.0">
+                                 <children>
+                                    <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="659.0" prefWidth="1280.0" VBox.vgrow="SOMETIMES">
+                                       <children>
+                                          <AnchorPane prefHeight="659.0" prefWidth="345.0">
+                                             <children>
+                                                <ComboBox fx:id="cmbxcmpcapituloId1" layoutX="6.0" layoutY="32.0" onAction="#ctacteSeleccionCapitulo" prefHeight="33.0" prefWidth="325.0" style="-fx-font-size: 12;" />
+                                                <ListView fx:id="lstVwCompa" layoutX="9.0" layoutY="75.0" prefHeight="200.0" prefWidth="322.0" style="-fx-font-size: 12;" />
+                                                 <TableView fx:id="tblVwteso" layoutX="10.0" layoutY="334.0" prefHeight="311.0" prefWidth="324.0">
+                                                     <columns>
+                                                         <TableColumn fx:id="clmntesocodigo" prefWidth="150.0" text="codigo" />
+                                                         <TableColumn fx:id="clmntesosaldo" prefWidth="104.0" text="saldo" />
+                                                         <TableColumn fx:id="clmnTesoDeudaSeleccion" prefWidth="37.0" text="I/O" />
+                                                     </columns>
+                                                 </TableView>
+                                                <Button layoutX="103.0" layoutY="291.0" mnemonicParsing="false" onAction="#btnTesoIncluir" text="%teso.btn.include" />
+
+                                             </children></AnchorPane>
+                                          <AnchorPane onDragDetected="#btnReciboImputarOnClick" prefHeight="659.0" prefWidth="307.0">
+                                             <children>
+                                                <TableView fx:id="tblVwteso1" layoutX="7.0" layoutY="149.0" prefHeight="195.0" prefWidth="292.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="clmntesocodigo1" prefWidth="173.0" text="codigo" />
+                                                      <TableColumn fx:id="clmntesosaldo1" prefWidth="96.0" text="saldo" />
+                                                   </columns>
+                                                </TableView>
+                                                <DatePicker fx:id="fchRecubi" layoutX="10.0" layoutY="34.0" onAction="#diasEnLaCalleCmbioFecha" />
+                                                <Label layoutX="10.0" layoutY="9.0" text="Fecha del Recibo" />
+                                                <Label layoutX="12.0" layoutY="76.0" text="Importe" />
+                                                <TextField fx:id="txtFldReciboTotal" layoutX="12.0" layoutY="101.0" />
+                                                <Button layoutX="10.0" layoutY="356.0" mnemonicParsing="false" onAction="#btnConfirmarReciboOnClick" text="Confirmar" />
+                                                <Button layoutX="198.0" layoutY="99.0" mnemonicParsing="false" text="Imputar" />
+                                                <ImageView fx:id="imgComprobante" fitHeight="218.0" fitWidth="287.0" layoutX="10.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true" />
+                                                <Button fx:id="btnBuscarComprobante" layoutX="10.0" layoutY="388.0" mnemonicParsing="false" onAction="#btnBuscarComprobanteClick" text="Buscar comprobante" />
+                                             </children></AnchorPane>
+                                          <VBox prefHeight="604.0" prefWidth="636.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <AnchorPane prefHeight="34.0" prefWidth="636.0">
+                                                   <children>
+                                                      <DatePicker fx:id="fchCale" layoutX="315.0" layoutY="2.0" onAction="#diasEnLaCalleCmbioFecha" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <GridPane prefHeight="343.0" prefWidth="636.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3; -fx-font-size: 8;" styleClass="button_3">
+                                                         <children>
+                                                            <Button fx:id="mes11" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="1">
+                                                         <children>
+                                                            <Button fx:id="mes12" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="2">
+                                                         <children>
+                                                            <Button fx:id="mes13" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="3">
+                                                         <children>
+                                                            <Button fx:id="mes14" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="4">
+                                                         <children>
+                                                            <Button fx:id="mes15" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="5">
+                                                         <children>
+                                                            <Button fx:id="mes16" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="6">
+                                                         <children>
+                                                            <Button fx:id="mes17" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.rowIndex="1">
+                                                         <children>
+                                                            <Button fx:id="mes21" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                         <children>
+                                                            <Button fx:id="mes22" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                         <children>
+                                                            <Button fx:id="mes23" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                                         <children>
+                                                            <Button fx:id="mes24" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                                         <children>
+                                                            <Button fx:id="mes25" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                                                         <children>
+                                                            <Button fx:id="mes26" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                                                         <children>
+                                                            <Button fx:id="mes27" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.rowIndex="2">
+                                                         <children>
+                                                            <Button fx:id="mes31" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                         <children>
+                                                            <Button fx:id="mes32" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                         <children>
+                                                            <Button fx:id="mes33" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                                         <children>
+                                                            <Button fx:id="mes34" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                                         <children>
+                                                            <Button fx:id="mes35" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                                                         <children>
+                                                            <Button fx:id="mes36" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                                                         <children>
+                                                            <Button fx:id="mes37" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.rowIndex="3">
+                                                         <children>
+                                                            <Button fx:id="mes41" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                         <children>
+                                                            <Button fx:id="mes42" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                                         <children>
+                                                            <Button fx:id="mes43" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                                         <children>
+                                                            <Button fx:id="mes44" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                                                         <children>
+                                                            <Button fx:id="mes45" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                                                         <children>
+                                                            <Button fx:id="mes46" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="6" GridPane.rowIndex="3">
+                                                         <children>
+                                                            <Button fx:id="mes47" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.rowIndex="4">
+                                                         <children>
+                                                            <Button fx:id="mes51" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                         <children>
+                                                            <Button fx:id="mes52" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                                         <children>
+                                                            <Button fx:id="mes53" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                                                         <children>
+                                                            <Button fx:id="mes54" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                                                         <children>
+                                                            <Button fx:id="mes55" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                                                         <children>
+                                                            <Button fx:id="mes56" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="100.0" style="-fx-border-width: 3;" styleClass="button_3" GridPane.columnIndex="6" GridPane.rowIndex="4">
+                                                         <children>
+                                                            <Button fx:id="mes57" mnemonicParsing="false" onAction="#btnMes" style="-fx-background-color: transparent;" styleClass="button_2" text="01" />
+                                                             <Label style="-fx-font-size: 9;" text="Emitido " />
+                                                             <Label style="-fx-font-size: 9;" text="Cobrado " />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </GridPane>
+                                                <AnchorPane prefHeight="196.0" prefWidth="636.0" VBox.vgrow="SOMETIMES">
+                                                   <children>
+                                                      <BarChart fx:id="barCharTeso" layoutX="14.0" layoutY="4.0" prefHeight="279.0" prefWidth="606.0">
+                                                        <xAxis>
+                                                          <CategoryAxis side="BOTTOM" fx:id="xAxis" />
+                                                        </xAxis>
+                                                        <yAxis>
+                                                          <NumberAxis side="LEFT" />
+                                                        </yAxis>
+                                                      </BarChart>
+                                                   </children></AnchorPane>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="tbMantenimiento" text="Mantenimiento">
+              <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EC7063;" BorderPane.alignment="CENTER">
+                     <children>
+                        <SplitPane dividerPositions="0.4308779011099899" layoutX="140.0" layoutY="62.0" prefHeight="160.0" prefWidth="200.0" styleClass="fndo_3" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <GridPane layoutX="125.0" layoutY="69.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="75.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="263.0" minWidth="10.0" prefWidth="263.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="10.0" prefWidth="69.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                          <RowConstraints maxHeight="42.0" minHeight="6.0" prefHeight="6.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="94.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="108.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="130.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" text="%lbl.nombre" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                                             <GridPane.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Button fx:id="btnGstnCapitulos" mnemonicParsing="false" onAction="#evnOnclickBtnGstnCapitulos" prefHeight="32.0" prefWidth="207.0" text="%param.btn.capitulos" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Button fx:id="btnGstnJoyasMoviles" mnemonicParsing="false" onAction="#evnOnclickBtnGstnJoyasMoviles" prefHeight="32.0" prefWidth="207.0" text="%param.btn.jm" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Button fx:id="btnGstnOrientes" mnemonicParsing="false" onAction="#evnOnclickBtnGstnOrientes" prefHeight="32.0" prefWidth="207.0" text="%param.btn.jm" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <TableView fx:id="tblTiposDOcumentos" layoutX="108.0" layoutY="75.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn maxWidth="261.0" prefWidth="179.0" text="C1" />
+                                        <TableColumn minWidth="0.0" prefWidth="346.0" text="C2" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+    </center>
+</BorderPane>

@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="986.0" prefWidth="1723.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mediodiaen.sar.SarController">
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" styleClass="fndo_1" stylesheets="@estilo1.css" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@arcoreal.png" />
+               </image>
+            </ImageView>
+            <GridPane prefHeight="146.0" prefWidth="847.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="29.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="txtSistema" prefHeight="81.0" prefWidth="817.0" style="-fx-font-size: 40; -fx-font-style: italic;" text="Label" GridPane.rowIndex="1">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="Manjari Bold" size="60.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="997.0" styleClass="fndo_1" stylesheets="@estilo1.css" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label fx:id="txtPie" text="Label" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="39.0" prefWidth="209.0" />
+            <HBox alignment="CENTER" prefHeight="39.0" prefWidth="104.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#btnSalir" text="%btn.salir" />
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </bottom>
+    <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFF0F5;" stylesheets="@estilo1.css" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="tbCapitulos" text="Gran Escriba Edras">
+            <content>
+<!--              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />-->
+                <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EC7063;" BorderPane.alignment="CENTER">
+                    <children>
+                        <VBox layoutX="164.0" layoutY="134.0" prefHeight="564.0" prefWidth="1057.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <AnchorPane prefHeight="15.0" prefWidth="1057.0">
+                                    <children>
+                                        <HBox prefHeight="43.0" prefWidth="1057.0" spacing="6.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Label fx:id="lyndaOcurrencia" prefWidth="600.0" styleClass="button_2" text="...">
+                                                    <font>
+                                                        <Font name="Khmer OS System" size="13.0" />
+                                                    </font>
+                                                </Label>
+                                                <Button fx:id="btnFltr" mnemonicParsing="false" onAction="#btnBscXfltrFnc" styleClass="button_2" text="Buscar" />
+                                                <Button fx:id="btnNvo" mnemonicParsing="false" onAction="#btnNvoFnc" prefWidth="85.0" styleClass="button_2" text="Cancelar" />
+                                                <Button fx:id="btnCnf" mnemonicParsing="false" onAction="#btnCnfFnc" styleClass="button_2" text="Confirmar" />
+                                                <Button fx:id="btnBrr" mnemonicParsing="false" onAction="#btnBrrFnc" styleClass="button_2" text="Borrar" />
+                                                <Pane prefHeight="26.0" prefWidth="55.0" styleClass="button_2" />
+                                                <Button fx:id="btnSlr" mnemonicParsing="false" onAction="#btnSlrFnc" styleClass="button_2" text="Salir" />
+                                                <Pane prefHeight="26.0" prefWidth="18.0" styleClass="button_2" />
+                                            </children>
+                                            <padding>
+                                                <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                            </padding>
+                                        </HBox>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="295.0" prefWidth="1057.0">
+                                    <children>
+                                        <Label layoutX="28.0" layoutY="37.0" text="apellido" />
+                                        <TextField fx:id="txtFldcmpapellido" layoutX="28.0" layoutY="62.0" prefHeight="33.0" prefWidth="437.0" />
+                                        <Label layoutX="481.0" layoutY="37.0" text="nombres" />
+                                        <TextField fx:id="txtFldcmpnombres" layoutX="481.0" layoutY="62.0" prefHeight="33.0" prefWidth="398.0" />
+                                        <Label layoutX="31.0" layoutY="110.0" text="Capítulo" />
+                                        <ComboBox fx:id="cmbxcmpcapituloId" layoutX="31.0" layoutY="139.0" prefHeight="33.0" prefWidth="434.0" />
+                                        <Label layoutX="482.0" layoutY="110.0" text="Cargo" />
+                                        <ComboBox fx:id="cmbxcmpjoyaMovilId" layoutX="482.0" layoutY="139.0" prefHeight="33.0" prefWidth="401.0" />
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="430.0">
+                                    <children>
+                                        <TableView fx:id="tblVwcmp" prefHeight="634.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columns>
+                                                <TableColumn fx:id="clmncmpapellido" prefWidth="384.0" text="apellido" />
+                                                <TableColumn fx:id="clmncmpnombres" minWidth="0.0" prefWidth="340.0" text="nombres" />
+                                                <TableColumn fx:id="clmncmpcapitulo" minWidth="0.0" prefWidth="348.0" text="capitulo" />
+                                                <TableColumn fx:id="clmncmpnumeroCapítulo" prefWidth="65.0" text="N°" />
+                                                <TableColumn fx:id="clmncmpjoya" prefWidth="251.0" text="Cargo" />
+
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="tbCompaneros" text="Escriba Edras">
+            <content>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EC7063;" BorderPane.alignment="CENTER">
+                    <children>
+                        <VBox layoutX="164.0" layoutY="134.0" prefHeight="564.0" prefWidth="1057.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <AnchorPane prefHeight="15.0" prefWidth="1057.0">
+                                    <children>
+                                        <HBox prefHeight="43.0" prefWidth="1057.0" spacing="6.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Label fx:id="lyndaOcurrenciaCmpa" prefWidth="600.0" styleClass="button_2" text="...">
+                                                    <font>
+                                                        <Font name="Khmer OS System" size="13.0" />
+                                                    </font>
+                                                </Label>
+                                                <Button fx:id="btnFltrCmpa" mnemonicParsing="false" onAction="#btnBscXfltrFncCmpa" styleClass="button_2" text="Buscar" />
+                                                <Button fx:id="btnNvoCmpa" mnemonicParsing="false" onAction="#btnNvoFncCmpa" prefWidth="85.0" styleClass="button_2" text="Cancelar" />
+                                                <Button fx:id="btnCnfCmpa" mnemonicParsing="false" onAction="#btnCnfFncCmpa" styleClass="button_2" text="Confirmar" />
+                                                <Button fx:id="btnBrrCmpa" mnemonicParsing="false" onAction="#btnBrrFncCmpa" styleClass="button_2" text="Borrar" />
+                                                <Pane prefHeight="26.0" prefWidth="55.0" styleClass="button_2" />
+                                                <Button fx:id="btnSlrCmpa" mnemonicParsing="false" onAction="#btnSlrFnc" styleClass="button_2" text="Salir" />
+                                                <Pane prefHeight="26.0" prefWidth="18.0" styleClass="button_2" />
+                                            </children>
+                                            <padding>
+                                                <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                            </padding>
+                                        </HBox>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="531.0" prefWidth="1523.0">
+                                    <children>
+                                        <Label layoutX="14.0" layoutY="35.0" text="apellido" />
+                                        <TextField fx:id="txtFldcmpaapellido" layoutX="14.0" layoutY="60.0" prefHeight="33.0" prefWidth="298.0" />
+                                        <Label layoutX="320.0" layoutY="35.0" text="nombres" />
+                                        <TextField fx:id="txtFldcmpanombres" layoutX="320.0" layoutY="60.0" prefHeight="25.0" prefWidth="295.0" />
+                                        <Label layoutX="18.0" layoutY="105.0" text="tipo documento" />
+                                        <ComboBox fx:id="cmbxcmpatipoDocumento" layoutX="18.0" layoutY="130.0" prefHeight="33.0" prefWidth="203.0" />
+                                        <Label layoutX="232.0" layoutY="105.0" text="diploma" />
+                                        <TextField fx:id="txtFldcmpadiploma" layoutX="232.0" layoutY="130.0" prefHeight="25.0" prefWidth="80.0" />
+
+                                        <Label layoutX="321.0" layoutY="106.0" text="Fecha Nacimiento" />
+                                        <DatePicker fx:id="dateFldcmpafechaDesde" layoutX="321.0" layoutY="130.0" prefHeight="33.0" prefWidth="295.0" />
+                                        <Label layoutX="17.0" layoutY="177.0" text="Fecha Exaltación" />
+                                        <DatePicker fx:id="dateFldcmpafechaExaltacion" layoutX="17.0" layoutY="201.0" prefHeight="33.0" prefWidth="295.0" />
+
+                                        <Label layoutX="321.0" layoutY="178.0" text="Legajo en GL" />
+                                        <TextField fx:id="txtFldcmpanroGl" layoutX="321.0" layoutY="202.0" prefHeight="33.0" prefWidth="130.0" />
+                                        <RadioButton fx:id="chkBxFldcmpaactivo" layoutX="468.0" layoutY="207.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="21.0" prefWidth="71.0" text="activo" textAlignment="RIGHT" />
+                                    <Button fx:id="btnGestionCargosCmpa" layoutX="638.0" layoutY="20.0" mnemonicParsing="false" onAction="#btnGestionCargosCmpaClick" prefHeight="32.0" prefWidth="197.0" styleClass="button_2" text="Gestion de Cargos" />
+                                    <TableView fx:id="tblVwCargos" layoutX="637.0" layoutY="59.0" prefHeight="174.0" prefWidth="727.0">
+                                      <columns>
+                                          <TableColumn fx:id="clmnCargoCapitulo" prefWidth="190.0" text="Capitulo" />
+                                          <TableColumn fx:id="clmnCargoJoya" prefWidth="127.0" text="Cargo" />
+                                          <TableColumn fx:id="clmnCargofechaDesde" prefWidth="184.0" text="Fecha desde" />
+                                          <TableColumn fx:id="clmnCargofechaHasta" prefWidth="184.0" text="Fecha hasta" />
+                                      </columns>
+                                    </TableView>
+                                    <TableView fx:id="tblVwDebitos" layoutX="637.0" layoutY="273.0" prefHeight="180.0" prefWidth="729.0">
+                                      <columns>
+                                        <TableColumn fx:id="clmnDebitoCuota" prefWidth="70.0" text="Cuota" />
+                                        <TableColumn fx:id="clmnDebitoFecha" prefWidth="139.0" text="Fecha" />
+                                          <TableColumn fx:id="clmnDebitoImporte" prefWidth="173.0" text="Importe" />
+                                          <TableColumn fx:id="clmnDebitoPago" prefWidth="155.0" text="Pagado" />
+                                          <TableColumn fx:id="clmnDebitoSaldo" prefWidth="185.0" text="Saldo" />
+                                      </columns>
+                                    </TableView>
+                                    <PieChart fx:id="pieChartDeuda" layoutX="19.0" layoutY="244.0" prefHeight="216.0" prefWidth="271.0" />
+                                    <Label fx:id="txtInfoDeuda" layoutX="919.0" layoutY="244.0" />
+
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="327.0" prefWidth="1523.0">
+                                    <children>
+                                        <TableView fx:id="tblVwcmpa" layoutY="-2.0" prefHeight="265.0" prefWidth="1523.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.0">
+                                            <columns>
+                                                <TableColumn fx:id="clmncmpaapellido" prefWidth="190.0" text="apellido" />
+                                                <TableColumn fx:id="clmncmpanombres" prefWidth="127.0" text="nombres" />
+                                                <TableColumn fx:id="clmncmpafechaDesde" prefWidth="184.0" text="Nacimiento" />
+                                                <TableColumn fx:id="clmncmpatipoDocumento" prefWidth="166.0" text="tipo documento" />
+                                                <TableColumn fx:id="clmncmpadiploma" prefWidth="99.0" text="Diploma" />
+                                                <TableColumn fx:id="clmncmpafechaExaltacion" prefWidth="176.0" text="fecha exaltacion" />
+                                                <TableColumn fx:id="clmncmpafechaBaja" prefWidth="154.0" text="fecha baja" />
+                                                <TableColumn fx:id="clmncmpafechaOrienteEterno" prefWidth="161.0" text="Oriente Eterno" />
+                                                <TableColumn fx:id="clmncmpaactivo" prefWidth="75.0" text="activo" />
+                                                <TableColumn fx:id="clmncmpanroGl" prefWidth="121.0" text="Legajo GL" />
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="tbGranCapitulo" text="Gran Tesorero">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab fx:id="tbMantenimiento" text="Mantenimiento">
+              <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EC7063;" BorderPane.alignment="CENTER">
+                     <children>
+                        <SplitPane dividerPositions="0.4308779011099899" layoutX="140.0" layoutY="62.0" prefHeight="160.0" prefWidth="200.0" styleClass="fndo_3" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <GridPane layoutX="125.0" layoutY="69.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="75.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="263.0" minWidth="10.0" prefWidth="263.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="10.0" prefWidth="69.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                          <RowConstraints maxHeight="42.0" minHeight="6.0" prefHeight="6.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="94.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="108.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="130.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" text="%lbl.nombre" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                                             <GridPane.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Button fx:id="btnGstnCapitulos" mnemonicParsing="false" onAction="#evnOnclickBtnGstnCapitulos" prefHeight="32.0" prefWidth="207.0" text="%param.btn.capitulos" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Button fx:id="btnGstnJoyasMoviles" mnemonicParsing="false" onAction="#evnOnclickBtnGstnJoyasMoviles" prefHeight="32.0" prefWidth="207.0" text="%param.btn.jm" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Button fx:id="btnGstnOrientes" mnemonicParsing="false" onAction="#evnOnclickBtnGstnOrientes" prefHeight="32.0" prefWidth="207.0" text="%param.btn.jm" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <TableView fx:id="tblTiposDOcumentos" layoutX="108.0" layoutY="75.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn maxWidth="261.0" prefWidth="179.0" text="C1" />
+                                        <TableColumn minWidth="0.0" prefWidth="346.0" text="C2" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+    </center>
+</BorderPane>

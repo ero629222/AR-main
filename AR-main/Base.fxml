@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="776.0" prefWidth="997.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mediodiaen.sar.SarController">
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" styleClass="fndo_1" stylesheets="@estilo1.css" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@arcoreal.png" />
+               </image>
+            </ImageView>
+            <GridPane prefHeight="146.0" prefWidth="847.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="29.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="txtSistema" prefHeight="81.0" prefWidth="817.0" text="%ttlo.sistema" GridPane.rowIndex="1">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="Yrsa Regular" size="51.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="997.0" styleClass="fndo_1" stylesheets="@estilo1.css" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label fx:id="txtPie" text="Label" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="39.0" prefWidth="209.0" />
+            <HBox alignment="CENTER" prefHeight="39.0" prefWidth="104.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#btnSalir" text="%btn.salir" />
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EC7063;" BorderPane.alignment="CENTER">
+         <children>
+         <VBox layoutX="164.0" layoutY="134.0" prefHeight="564.0" prefWidth="1057.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="15.0" prefWidth="1057.0">
+               <children>
+                  <HBox prefHeight="43.0" prefWidth="1057.0" spacing="6.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label fx:id="lyndaOcurrencia" prefWidth="600.0" styleClass="button_2" text="...">
+                           <font>
+                              <Font name="Khmer OS System" size="13.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnFltr" mnemonicParsing="false" onAction="#btnBscXfltrFnc" styleClass="button_2" text="Buscar" />
+                        <Button fx:id="btnNvo" mnemonicParsing="false" onAction="#btnNvoFnc" prefWidth="85.0" styleClass="button_2" text="Nuevo" />
+                        <Button fx:id="btnCnf" mnemonicParsing="false" onAction="#btnCnfFnc" styleClass="button_2" text="Confirmar" />
+                        <Button fx:id="btnBrr" mnemonicParsing="false" onAction="#btnBrrFnc" styleClass="button_2" text="Borrar" />
+                        <Pane prefHeight="26.0" prefWidth="55.0" styleClass="button_2" />
+                        <Button fx:id="btnSlr" mnemonicParsing="false" onAction="#btnSlrFnc" styleClass="button_2" text="Salir" />
+                        <Pane prefHeight="26.0" prefWidth="18.0" styleClass="button_2" />
+                     </children>
+                     <padding>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="430.0">
+            <children>
+            </vst1>
+            <vst2>
+         </children>
+      </AnchorPane>
+      <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="430.0">
+         <children>
+            <TableView fx:id="tblVw%%%04%%%" prefHeight="634.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columns>
+               </vst2>
+               <vst3>
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
+        </children>
+        </AnchorPane>
+        </center>
+</BorderPane>
